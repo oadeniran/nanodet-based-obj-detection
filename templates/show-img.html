@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Image</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 80vh;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Show Image</h1>
+    <div id="imageContainer"></div>
+
+    <script>
+        // Assume Flask passes the image path as a JavaScript variable
+        var imagePathFromFlask = "../static/inf-img.jpg";
+
+        // Check if imagePathFromFlask is not empty
+        if (imagePathFromFlask) {
+            // Create new image element
+            var imgElement = document.createElement('img');
+            imgElement.src = imagePathFromFlask;
+            imgElement.alt = 'Image from Flask Backend';
+
+            // Append the image to the container
+            document.getElementById('imageContainer').appendChild(imgElement);
+        }
+    </script>
+</body>
+</html>
